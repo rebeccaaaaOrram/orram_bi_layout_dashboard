@@ -25,15 +25,26 @@
 <body id="page-top">
 
     <style>
+       :root{
+        --primary-color: #1F4247;
+        --link-color: #fff;
+       }
         a {
-            color: #0d2528;
+            color: var(--link-color)
         }
         a:hover {
-            color: #0d2528;
+          color: var(--link-color)
+        }
+        .sidebar #sidebarToggle::after {
+            color: var(--link-color);
+        }
+        .sidebar-brand-text img,
+        .sidebar-brand-icon {
+          filter: invert(1);
         }
         .sidebar-bg{
-            background-color: #b4c4c4;
-            color: #0d2528;
+            background-color: var(--primary-color);
+            color: var(--link-color);
         }
 
         .sidebar-toggled #sidebarToggle{
@@ -54,15 +65,16 @@
         #sidebarToggle {
             position: absolute;
             top: 1rem;
-            background: #b4c4c4;
+            background: var(--primary-color);
             z-index: 3;
             box-shadow: 3px 6px 9px #00000016;
             margin-left: 6rem;
         }
 
         .form-select{
-            background: #b4c4c4;
+            background: var(--primary-color);
             border: unset;
+            color: var(--link-color);
             border-radius: 3px;
             padding: 5px;
             font-size: 14px;
@@ -78,7 +90,6 @@
 
         <!-- Sidebar -->
         <ul class="navbar-nav sidebar-bg sidebar accordion" id="accordionSidebar">
-
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon">
@@ -224,8 +235,7 @@
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                    <!-- Sidebar Toggle (Topbar) -->
+                  <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
@@ -234,14 +244,14 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="d-flex align-items-center">
                             <span>Grupos: </span>
-                            <select class="ml-2 form-select" aria-label="Selecione um Grupo">
+                            <select id="selectGrupos" class="ml-2 form-select" aria-label="Selecione um Grupo">
                                 <option selected="">Selecione</option>
                                 <option value="1">SIFRA</option>
                               </select> 
                       </li>
                       <li class="d-flex align-items-center ml-4">
                         <span>Relatórios:</span>
-                        <select class="ml-2 form-select" aria-label="Selecione um Relatorio">
+                        <select id="selectRelatorio" class="ml-2 form-select" aria-label="Selecione um Relatorio">
                             <option selected="">Selecione</option>
                             <option value="1">FIDC SIFRA PAR</option>
                           </select>
